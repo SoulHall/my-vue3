@@ -8,13 +8,19 @@
   </div>
 </template>
 <script>
-import {reactive,watch} from 'vue'
+      /*toRaw */
+//ref，reative会在每次修改数据都会更新视图
+//reative创建的数据可以通过toRaw()方法返回包装之前的原始数据，修改原始数据不会更新视图
+//ref创建的数据也可以通过toRow()方法返回包装前原始数据，但参数必须加上.value
+      /*markRaw */
+//markRow(obj)通过这个方法使obj永远不会被追踪，即使包装成了响应式数据
+import {reactive,isReactive,watch} from 'vue'
 export default {
     name:'reactive',
     setup(){
         let {arr,remArr} = useRemArr();
         watch(arr,()=>{
-            console.log(arr,1212)
+            // console.log(arr,1212)
         })
         return{arr,remArr}
     },
@@ -37,6 +43,7 @@ function useRemArr(){
     }])
     function remArr(id){
         // arr = arr.filter(v=>v.id!==id);//此种从新赋值方式不会更新视图
+        console.log(isReactive(arr),'isReactive');//isReactive判断是否为reactive类型
         arr.splice(id,1);
         console.log(arr,id,1515);
     }
