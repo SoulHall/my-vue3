@@ -1,27 +1,30 @@
 <template>
   <!-- <img alt="Vue logo" src="./assets/logo.png"> -->
   <!-- <HelloWorld msg="Welcome to Your Vue.js App"/> -->
-  <mysetup></mysetup>
+  <!-- <mysetup></mysetup>
   <reactive></reactive>
   <customref></customref>
-  <readonly></readonly>
+  <readonly></readonly> -->
+  <practise></practise>
 </template>
 
 <script>
 // import HelloWorld from './components/HelloWorld.vue'
-import mysetup from './components/setup.vue'
-import reactive from './components/reactive.vue'
-import customref from './components/mycustomref.vue'
-import readonly from './components/readonly.vue'
+// import mysetup from './components/setup.vue'
+// import reactive from './components/reactive.vue'
+// import customref from './components/mycustomref.vue'
+// import readonly from './components/readonly.vue'
+import practise from './components/practise.vue'
 
 export default {
   name: 'App',
   components: {
     // HelloWorld
-    mysetup,
-    reactive,
-    customref,
-    readonly
+    // mysetup,
+    // reactive,
+    // customref,
+    // readonly,
+    practise
   }
 }
 </script>
